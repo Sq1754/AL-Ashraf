@@ -1,0 +1,394 @@
+@import url('https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    font-family: 'poppins',sans-serif;
+}
+
+/* Header */
+.menu_icon {
+    display: none;
+}
+
+.header {
+    box-shadow: 1px 1px 10px 2px rgba(0, 51, 153, 0.3);
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    width: 100%;
+    height: 12%;
+    padding: 10px 3% 10px 2%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    animation: slideDown 1s ease-out; /* Slide-in animation */
+}
+
+/* Slide-down animation */
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.logo {
+    width: 35%;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    cursor: default;
+}
+
+.logo img {
+    width: 15%;
+    transition: transform 0.5s ease; /* Smooth scaling on hover */
+}
+
+.logo img:hover {
+    transform: scale(1.2); /* Enlarge logo on hover */
+}
+
+.logo p {
+    margin: 1rem;
+    font-family: "Bona Nova SC", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.5rem;
+    color: #003399;
+}
+
+/* Navbar */
+.navbar a {
+    color: black;
+    display: inline-block;
+    font-size: 1.3rem;
+    padding: 5px 10px;
+    text-decoration: none;
+    font-weight: 500;
+    font-family: "Bona Nova SC", serif;
+    position: relative;
+    transition: color 0.3s ease, background-color 0.3s ease; /* Smooth hover */
+}
+
+.navbar a:hover {
+    color: #fff;
+    background-color: #003399;
+    border-radius: 5px;
+    transform: scale(1.1); /* Slightly enlarge on hover */
+    box-shadow: 0px 4px 10px rgba(0, 51, 153, 0.3); /* Add shadow on hover */
+}
+
+/* Navbar underline animation */
+.navbar a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    /* background-color: #003399; */
+    background-color: #fff;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+
+/* Banner */
+
+.banner{
+    margin-top: 7%;
+    height: 70%;
+}
+.banner img{
+    border-radius: 10px;
+    width: 75%;
+}
+
+/* About Section */
+.about {
+    margin: 5% 2%;
+    animation: fadeIn 1.5s ease-out; /* Smooth entrance animation */
+}
+
+.headingStyle {
+    color: #003399;
+    font-family: "Bona Nova SC", serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-size: 2.5rem;
+    animation: slideInLeft 1.5s ease-out; /* Slide-in animation for heading */
+}
+
+h1 {
+    padding: 1.3rem;
+    font-size: 2.5rem;
+    text-align: center;
+    font-family: "Bona Nova SC", serif;
+}
+
+.about .info {
+    padding: 1.5rem;
+    text-align: justify;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    animation: slideInRight 1.5s ease-out; /* Slide-in animation for text */
+}
+
+.sidepic {
+    width: 100%;
+    animation: scaleUp 1.5s ease-in-out; /* Smooth scaling for image */
+}
+
+.sidepic img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Adds a soft shadow */
+    transition: transform 0.3s ease; /* Smooth hover zoom */
+}
+
+.sidepic img:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Flexbox for About Content */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+/* Counter Section */
+#Counter {
+    margin-top: 3rem;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #003399ca;
+    color: white;
+    text-align: center;
+    animation: fadeInUp 1.5s ease-out; /* Entrance animation */
+}
+
+#num {
+    text-align: left;
+    font-size: 2rem;
+    margin-right: 2rem;
+    font-weight: bold;
+    font-family: "Bona Nova SC", serif;
+}
+
+.white-bar {
+    display: flex;
+    gap: 5rem;
+}
+
+.section {
+    padding: 1.3rem;
+    font-size: 1.3rem;
+    text-align: center;
+    font-family: "Bona Nova SC", serif;
+}
+
+.section h1 {
+    padding: 10px;
+    font-size: 2rem;
+}
+
+
+/* General animation classes */
+.fadeIn {
+    animation: fadeIn 1.5s ease-out;
+}
+
+.slideInRight {
+    animation: slideInRight 1.5s ease-out;
+}
+
+.scaleUp {
+    animation: scaleUp 1.5s ease-in-out;
+}
+/* Keyframes for Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes scaleUp {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+/* VIDEO Section  */
+.row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.col{
+    padding: 10px;
+    border-radius: 10px;
+    width: 30%;
+    height: 300px;
+    margin: 5px;
+    box-shadow: 1px 1px 2px gray;
+}
+.col p{
+    font-size: medium;
+    padding: 5px;
+}
+.col h3{
+    font-family: "Bona Nova SC", serif;
+}
+iframe{
+    width: 100%;
+    height: 215px;
+    border: 0px;
+    padding: 10px;
+}
+
+/* // Gallery //  */
+#gallery{
+    margin: 2rem 0;
+    padding: 1rem 0;
+}
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent; /* Ensure no background color affects the slide */
+}
+
+.image-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%; /* Ensure wrapper fills the slide */
+    overflow: hidden; /* Prevents overflow of the image */
+}
+
+.image-wrapper img {
+    border: 2px solid rgba(204, 203, 203, 0.3); /* Lighter shadow-like border */
+    border-radius: 10px; /* Rounded corners */
+    max-height: 100%; /* Scale to fit the wrapper height */
+    max-width: 100%; /* Keep the image within the wrapper width */
+    object-fit: cover; /* Ensures image covers the wrapper properly */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+}
+
+/* Hover effect */
+.swiper-slide:hover .image-wrapper img {
+    transform: scale(1.1); /* Slight zoom on hover */
+}
+
+
+
+/*  Footer  */
+.pages{
+    font-size: 0.9rem;
+    padding: 10px;
+}
+.pages a{
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+}
+.copyright{
+    padding-top: 10px;
+}
+
+.footer {
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px 0;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 50px;
+}
+
+.footer-section {
+    width: 30%;
+}
+
+.footer-section h3 {
+    margin-bottom: 15px;
+    color: #f39c12;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 5px 0;
+}
+
+.footer-section a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 10px 0;
+    border-top: 1px solid #444;
+    margin-top: 20px;
+}
+
+.footer p, .footer a {
+    font-size: 14px;
+    padding: 5px;
+}
+
+.footer i {
+    margin-right: 8px;
+    color: #f39c12;
+}

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="assets/Al-Ashraf-logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script type="module" src="script.js"></script>
+    <script src="https://kit.fontawesome.com/77521aeb78.js" crossorigin="anonymous"></script>
+    <style>
+        .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+    <title>Al-Ashraf</title>
+</head>
+
+<body>
+    <header class="header">
+        <a href="#home" class="logo">
+            <img src="assets/Al-Ashraf-logo.png" alt="Logo" />
+            <p>Al Ashraf Sr. Sec. School</p>
+        </a>
+    
+        <img src="assets/ham.png" onclick="toggleMenu(this)" class="menu_icon" alt="Menu Icon" />
+        <nav class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About Us</a>
+            <a href="#video">Gallery</a>
+            <a href="#members">Admissions</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    
+    <!-- Banner section  -->
+    <div id="home" class="banner">
+        <!-- Slider main container -->
+        <div class="swiper2">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide" data-swiper-autoplay="3000">
+                    <img width="75%" src="assets/10thResult.jpg" alt="" />
+                </div>
+                <div class="swiper-slide" data-swiper-autoplay="3000">
+                    <img width="70%" src="gallery/WhatsApp Image 2025-01-05 at 12.21.23_5bddee7e.jpg" alt="" />
+                </div>
+                <div class="swiper-slide" data-swiper-autoplay="3000">
+                    <img width="70%" src="gallery/WhatsApp Image 2025-01-05 at 12.21.14_02fbb009.jpg" alt="" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+ <!-- About section -->
+<section class="about" id="about">
+    <h1><span class="headingStyle">A</span>bout&nbsp; 
+        <i class="fa-regular fa-file-lines" style="color: #003399ca;"></i> 
+    </h1>
+    <div class="container">
+        <div class="sidepic">
+            <img src="assets/sidepic.png" alt="Side Image" />
+        </div>
+        <div class="info">
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo,
+                suscipit totam! Aspernatur at eos est? Quisquam at deleniti...
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque velit, eius et esse vero in sunt ratione dicta harum deleniti voluptas rerum mollitia autem nisi explicabo totam molestiae minus nulla quam sequi? Vitae labore explicabo dicta fugiat. Aliquid iusto provident odit quod accusantium iste nostrum eaque, adipisci deleniti architecto temporibus aperiam explicabo perferendis. Officia voluptatibus eligendi consequuntur laborum eum alias exercitationem velit, in incidunt accusamus! Nulla soluta aut neque iste reiciendis in alias officiis sint ea ab, corrupti, assumenda voluptates inventore quisquam fuga molestiae modi qui quidem ipsa veritatis, molestias vitae nihil dignissimos nesciunt! Quo libero labore enim dolores vitae.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, ipsam sunt, culpa ipsum maiores, eum incidunt consequatur porro qui quasi ea temporibus distinctio soluta blanditiis provident fuga dicta omnis nulla tenetur voluptatum doloremque. Accusamus nostrum unde ab quos deleniti reiciendis repellat, quas harum autem, dicta quibusdam voluptatum molestiae! Asperiores, et!
+            </p>
+        </div>
+    </div>
+
+    <!-- Admission Numbers Counter -->
+    <div id="Counter">
+        <div>
+            <h6 id="num">Al Ashraf in Numbers: &nbsp;</h6>
+        </div>
+        <div class="white-bar">
+            <div class="section students">
+                <h1><strong>{{ counterValue1 }}</strong>+</h1>
+                <span>Admissions</span>
+            </div>
+            <div class="section faculty">
+                <h1><strong>{{ counterValue2 }}</strong>+</h1>
+                <span>Faculty</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- // VIDEO section  -->
+    <section id="video">
+        <h1><span class="headingStyle">V</span>ideos&nbsp;<i class="fa-solid fa-photo-film" style="color: #003399ca;"></i></h1>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h3>School Interior</h3>
+                    <p>Al Ashraf School is a place where students can learn and grow in a safe</p>
+                    <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+                </div>
+                <div class="col">
+                    <h3>School Interior</h3>
+                    <p>Al Ashraf School is a place where students can learn and grow in a safe</p>
+                    <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+                </div>
+                <div class="col">
+                    <h3>School Interior</h3>
+                    <p>Al Ashraf School is a place where students can learn and grow in a safe</p>
+                    <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Gallery Section  -->
+<section id="gallery">
+    <h1><span class="headingStyle">G</span>allery &nbsp;<i class="fa-solid fa-image" style="color: #003399ca;"></i></h1>
+    <div class="swiper">
+        <div class="swiper-wrapper" id="galleryContainer">
+            <!-- Images will be dynamically added here -->
+        </div>
+    </div>
+</section>
+
+<!-- //FOOTER   -->
+
+<footer id="contact">
+
+    <div class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p><i class="fa-solid fa-phone"></i> Phone: +91 9413818480 (Rajab Ali)</p>
+                <p><i class="fa-solid fa-phone"></i> Phone: +91 7737250349 (Maqsood Ahmed)</p>
+                <p><i class="fa-solid fa-envelope"></i> Email: info@yourschool.edu</p>
+                <p><i class="fa-solid fa-map-marker-alt"></i> Address: Your School Name, 
+                123 School Street, Ajmer, Rajasthan, India</p>
+            </div>
+    
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Admissions</a></li>
+                    <li><a href="#">Academic Calendar</a></li>
+                    <li><a href="#">Library</a></li>
+                    <li><a href="#">Alumni</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <p>
+                    <a href="#"><i class="fa-brands fa-facebook"></i> Facebook</a>
+                </p>
+                <p>
+                    <a href="#"><i class="fa-brands fa-twitter"></i> Twitter</a>
+                </p>
+                <p>
+                    <a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                </p>
+                <p>
+                    <a href="#"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                </p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="pages">
+                <a target="_blank" href="https://www.linkedin.com/in/saqlain1754/">Developed By Mohammed Saqlain</a>
+            </div>
+            <p>&copy; 2025 Ashraf Ul Jeelani Shikshak Sansthan and its affiliates. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</body>
+
+</html>
