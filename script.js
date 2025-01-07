@@ -36,55 +36,46 @@ const galleryContainer = document.getElementById("galleryContainer");
 
 const fetchImages = async () => {
   try {
-    // Fetch image paths from the server
-    // const response = await fetch("http://192.168.164.103:5000/get-images");
-    const response = await fetch("https://d31a-2409-40d4-15b-15da-bce1-7a46-3f5d-8100.ngrok-free.app/get-images");
-    const imagePaths = await response.json();
-
-    // Dynamically create Swiper slides for each image
-    imagePaths.forEach((path) => {
-      const slide = document.createElement("div");
-      slide.classList.add("swiper-slide");
-      slide.innerHTML = `
-                <div class="image-wrapper">
-                    <img src="${path}" alt="Gallery Image">
-                </div>`;
-      galleryContainer.appendChild(slide);
+    const response = await fetch("https://d31a-2409-40d4-15b-15da-bce1-7a46-3f5d-8100.ngrok-free.app/get-images", {
+      headers: { "ngrok-skip-browser-warning": "true" },
     });
 
-// Initialize Swiper after images are loaded
-const swiper = new Swiper(".swiper", {
-  direction: "horizontal",
-  loop: true,
-  slidesPerView: 3,
-  spaceBetween: 20, // Add spacing between slides
-  autoplay: {
-    delay: 2000, // Set autoplay delay
-    disableOnInteraction: false, // Autoplay continues after interaction
-  },
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-  effect: "coverflow", // You can change this to 'coverflow' or other effects
-  speed: 1500, // Set transition speed in ms
-  coverflowEffect: { // If you decide to use 'coverflow'
-    rotate: 33,
-    stretch: 0,
-    depth: 100,
-    modifier: 1,
-    slideShadows: true,
-  },
-});
+    if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
 
+    const contentType = response.headers.get("content-type");
+    if (!contentType?.includes("application/json")) {
+      console.error("Raw Response:", await response.text());
+      throw new Error("Expected JSON, but got a different response.");
+    }
+
+    const imagePaths = await response.json();
+    imagePaths.forEach((path) => {
+      galleryContainer.innerHTML += `
+        <div class="swiper-slide">
+          <div class="image-wrapper">
+            <img src="${path}" alt="Gallery Image">
+          </div>
+        </div>`;
+    });
+
+    new Swiper(".swiper", {
+      direction: "horizontal",
+      loop: true,
+      slidesPerView: 3,
+      spaceBetween: 20,
+      autoplay: { delay: 2000, disableOnInteraction: false },
+      pagination: { el: ".swiper-pagination", clickable: true },
+      navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+      effect: "coverflow",
+      speed: 1500,
+      coverflowEffect: { rotate: 33, stretch: 0, depth: 100, modifier: 1, slideShadows: true },
+    });
   } catch (error) {
     console.error("Error fetching images:", error);
   }
 };
+
+
 
 // Call the function to load images
 fetchImages();
