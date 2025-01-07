@@ -37,8 +37,8 @@ const galleryContainer = document.getElementById("galleryContainer");
 const fetchImages = async () => {
   try {
     // Fetch image paths from the server
-    // const response = await fetch("/get-images");
-    const response = await fetch("http://192.168.164.103:5000/get-images");
+    // const response = await fetch("http://192.168.164.103:5000/get-images");
+    const response = await fetch("https://d31a-2409-40d4-15b-15da-bce1-7a46-3f5d-8100.ngrok-free.app/get-images");
     const imagePaths = await response.json();
 
     // Dynamically create Swiper slides for each image
